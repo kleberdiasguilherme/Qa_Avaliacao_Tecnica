@@ -1,0 +1,72 @@
+{
+  "testCases": [
+    {
+      "nome": "  ",
+      "preco": "  ",
+      "validade": "  ",
+      "description": "Todos os campos vazios. Deve falhar em todos os campos."
+    },
+    {
+      "nome": "Produto123",
+      "preco": "10,00",
+      "validade": "2021-12-31",
+      "description": "Campo nome com números. Deve falhar no campo nome."
+    },
+    {
+      "nome": "ProdutoTeste",
+      "preco": "-10,00",
+      "validade": "2021-12-31",
+      "description": "Preço negativo. Deve falhar no campo preço."
+    },
+    {
+      "nome": "ProdutoTeste",
+      "preco": "abc",
+      "validade": "2021-12-31",
+      "description": "Preço com letras. Deve falhar no campo preço."
+    },
+    {
+      "nome": "ProdutoTeste",
+      "preco": "0,00",
+      "validade": "2021-12-31",
+      "description": "Preço igual a 0. Deve passar."
+    },
+    {
+      "nome": "ProdutoTeste",
+      "preco": "10,00",
+      "validade": "2022-01-01",
+      "description": "Validade maior que 31/12/2021. Deve falhar no campo validade."
+    },
+    {
+      "nome": "ProdutoTeste",
+      "preco": "10,00",
+      "validade": "2021-12-31",
+      "description": "Validade igual a 31/12/2021. Deve passar."
+    },
+    {
+      "nome": "ProdutoTeste",
+      "preco": "10,00",
+      "validade": "2021-11-30",
+      "description": "Validade anterior a 31/12/2021. Deve passar."
+    },
+    {
+      "nome": "ProdutoTeste",
+      "preco": "10,00",
+      "validade": "2021-12-32",
+      "description": "Validade inválida (dia inexistente). Deve falhar no campo validade."
+    },
+    {
+      "nome": "ProdutoTeste",
+      "preco": "10,00",
+      "validade": "2021-00-31",
+      "description": "Validade inválida (mês inexistente). Deve falhar no campo validade."
+    },
+    {
+      "nome": "ProdutoTeste",
+      "preco": "10,00",
+      "validade": "2021-12-00",
+      "description": "Validade inválida (dia zero). Deve falhar no campo validade."
+    }
+  ]
+}
+
+
